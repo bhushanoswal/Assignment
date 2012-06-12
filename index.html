@@ -32,30 +32,31 @@
     <div class="cbox-container">
     <form id="sign-up-frm" name="sign-up-frm" class="sign-up-frm" action="" method="POST">
     <fieldset>
-    <label>First Name</label>
+    <label>Name</label>
     <div class="cf">
- 	<input type="text" class="txt" id="firstname" name="firstname" tabindex="1" />
-    <div class="field_notvalid tooltip point-left error-tip" style="display:none;">This field requires attention.</div>
- 	<div class="field_confirm">&nbsp;<span></span>
-	</div>
-    </div>
-    <label>Last Name</label>
-    <div class="cf">
- 	 <input class="txt" type="text" id="lastname" name="lastname" tabindex="2" />
+ 	 <input class="txt" type="text" id="name" name="name" tabindex="1" />
     <div class="field_notvalid tooltip point-left error-tip" style="display:none;">This field requires attention.</div>
  	<div class="field_confirm">&nbsp;<span></span>
 	</div>
     </div>
     <label>E-mail</label>
     <div class="cf">
- 	 <input class="txt" type="text" id="email" name="email" value="" tabindex="3" />
+ 	 <input class="txt" type="text" id="email" name="email" value="" tabindex="2" />
     <div class="field_notvalid tooltip point-left error-tip chkld" style="display:none;">This field requires attention.</div>
  	<div class="field_confirm">&nbsp;<span></span>
 	</div>
     </div>
-    <label>Contact Number</label>
+    <label>Age</label>
     <div class="cf">
- 	 <input class="txt" type="text" id="contact" name="contact" tabindex="4" />
+ 	 <input class="txt" type="text" id="age" name="age" tabindex="3" />
+    <div class="field_notvalid tooltip point-left error-tip" style="display:none;">This field requires attention.</div>
+ 	<div class="field_confirm">&nbsp;<span></span>
+	</div>
+    </div>
+    <label>Gender</label>
+    <div class="cf">
+ 	<select class="select" name="gender" id="gender" tabindex="4">
+     <option value="default">Select Gender</option><option value="m">Male</option><option value="f">Female</option></select>
     <div class="field_notvalid tooltip point-left error-tip" style="display:none;">This field requires attention.</div>
  	<div class="field_confirm">&nbsp;<span></span>
 	</div>
@@ -67,9 +68,16 @@
  	<div class="field_confirm">&nbsp;<span></span>
 	</div>
     </div>
-    <label>Birth Date</label>
+    <label>Description</label>
     <div class="cf">
- 	<input type="text" class="" name="dob" id="dob" tabindex="6">
+ 	<input type="text" class="" name="description" id="description" tabindex="6">
+    <div class="field_notvalid tooltip point-left error-tip" style="display:none;">This field requires attention.</div>
+ 	<div class="field_confirm">&nbsp;<span></span>
+	</div>
+    </div>
+    <label>Pincode</label>
+    <div class="cf">
+ 	<input type="text" class="" name="pincode" id="pincode" tabindex="7">
     <div class="field_notvalid tooltip point-left error-tip" style="display:none;">This field requires attention.</div>
  	<div class="field_confirm">&nbsp;<span></span>
 	</div>
@@ -80,7 +88,7 @@
     </div>
  </div>   
  <div class="fslide">
-<div class="confslide"><input type="button" class="btn right sec signup" value="Sign Up" tabindex="11"/><div class="right loader" style="display:none;"><img src="images/loader.gif" /></div></div>
+<div class="confslide"><input type="button" class="btn right sec signup" value="Sign Up" tabindex="8"/><div class="right loader" style="display:none;"><img src="images/loader.gif" /></div></div>
  </div> 
 </div>
 <div id="footer"></div>

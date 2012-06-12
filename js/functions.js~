@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+alert($.load("http://blooming-beach-2334.herokuapp.com/users.json"));
+
  $.ajax({   
                                 type: "GET",
                                 async: true,
