@@ -1,19 +1,6 @@
 $(document).ready(function(){
 
- $.ajax({   
-                                type: "GET",
-                                async: true,
-                                dataType:'json',
-                                data:'',
-                                url: "http://blooming-beach-2334.herokuapp.com/users.json",   
-                                complete: function(data) {
-                                    alert(JSON.stringify(data));
-                                 },
-                                 dataFilter: function(data) {
-                                    alert(JSON.stringify(data));
-                                 }
-                                    });    
-    
+			          	
 $('#name').bind('focusout keyup',function(event) {
 	var mG=$(this).val();
 	if(mG=="")
@@ -92,7 +79,7 @@ $('#pincode').keydown(function(event) {
        intOnly(event);
     });
     
-$('.signup').click(function(){
+$('#signup').click(function(){
 	var flg=0;
 	$('#sign-up-frm div.cf').each(function(index){
 		$('#sign-up-frm div.cf:eq('+index+') > input, #sign-up-frm div.cf:eq('+index+') select').keyup().focusout();
@@ -138,6 +125,32 @@ $('.signup').click(function(){
 	
 });
 
+$('#getreq').click(function(){
+	
+	$.ajax({   
+                                type: "GET",
+                                async:true,
+                                dataType:'json',
+                                contentType: 'application/json; charset=utf-8',
+                                url: "users.json",
+                                 error: function(data,data1){
+                                 	console.log(JSON.stringify(data));
+                                 },
+                                 success: function(data){
+                                 	console.log(data);
+                                 	var usrdata="<tr><td>Name</td><td>Email</td><td>Age</td><td>Gender</td><td>Address</td><td>Description</td><td>Pincode</td></tr>";
+                                 	$('#box-container').html('<table id="datafill" width="100%"></table>');
+                                 	for(var i=0;i<data.length;i++)
+                                 	{
+                                 		usrdata+='<tr><td>'+data[i]['name']+'</td><td>'+data[i]['email']+'</td><td>'+data[i]['age']+'</td><td>'+data[i]['gender']+'</td><td>'+data[i]['address']+'</td><td>'+data[i]['description']+'</td><td>'+data[i]['pincode']+'</td></tr>'
+                                 		}
+                                 		$('#datafill').html(usrdata);
+                                 	}
+                                
+        });
+		
+	});
+
 });
 
 function novalfld(index,txt){
@@ -171,10 +184,4 @@ function intOnly(event)
         }
 }
 
-$.fn.serializeJSON=function() {
-    var json = {};
-    $.map($(this).serializeArray(), function(n, i){
-        json[n['name']] = n['value'];
-    });
-    return json;
-};
+
